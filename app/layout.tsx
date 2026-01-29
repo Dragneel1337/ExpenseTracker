@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 import { Header } from '@/components/Header';
 import './globals.css';
+import { ClerkProvider } from '@clerk/nextjs';
+import Footer from '@/components/Footer';
 
 const raleway = Raleway({
 	subsets: ['latin'],
@@ -18,16 +20,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${raleway.className}`}>
-				<Header />
-				<main className="min-h-screen">{children}</main>
-				<footer className="bg-blue-50 py-12 ">
-					<div className="container mx-auto px-4 text-center text-gray-600">
-						<p>© 2026 Expense Tracker. All rights reserved.</p>
-					</div>
-				</footer>
-			</body>
-		</html>
+		<ClerkProvider>
+			<html lang="en">
+				<body className={`${raleway.className}`}>
+					<Header />
+					<main className="min-h-screen">{children}</main>
+					<Footer />
+				</body>
+			</html>
+		</ClerkProvider>
 	);
 }
