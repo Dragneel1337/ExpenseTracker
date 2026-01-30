@@ -119,7 +119,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+
+  .gradient-hero-title {
+    @apply bg-linear-to-br from-blue-600 to-emerald-700 font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text
   }
 }

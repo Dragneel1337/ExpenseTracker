@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<ClerkProvider>
-			<html lang="en">
+			<html lang="en" className="scroll-smooth h-full">
 				<body className={`${raleway.className}`}>
 					<Header />
 					<main className="min-h-screen">{children}</main>
