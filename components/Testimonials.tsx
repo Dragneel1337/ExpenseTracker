@@ -35,16 +35,19 @@ const Testimonials = () => {
 										</div>
 									</div>
 									<div className="flex items-center gap-1" aria-label={`${testimony.rating} out of ${MAX_STARS} stars`}>
-										{Array.from({ length: MAX_STARS }, (_, i) => (
-											<span key={i} className={i < testimony.rating ? 'text-amber-400' : 'text-slate-200'} aria-hidden>
-												<Star
-													className="size-4"
-													strokeWidth={2}
-													fill={i < testimony.rating ? 'currentColor' : 'none'}
-													stroke="currentColor"
-												/>
-											</span>
-										))}
+										{[1, 2, 3, 4, 5].map(n => {
+											const filled = n <= testimony.rating;
+											return (
+												<span key={n} className={filled ? 'text-amber-400' : 'text-slate-200'} aria-hidden>
+													<Star
+														className="size-4"
+														strokeWidth={2}
+														fill={filled ? 'currentColor' : 'none'}
+														stroke="currentColor"
+													/>
+												</span>
+											);
+										})}
 										<span className="ml-2 text-sm font-semibold text-gray-600">{testimony.rating}.0</span>
 									</div>
 								</footer>
