@@ -12,11 +12,11 @@ import {
 	type LucideIcon,
 } from 'lucide-react';
 
-export const statsData: { value: string; icon: LucideIcon }[] = [
-	{ value: '50K+', icon: Users },
-	{ value: '$2B+', icon: TrendingUp },
-	{ value: '99.9%', icon: Shield },
-	{ value: '4.9/5', icon: Star },
+export const statsData: { value: string; label: string; icon: LucideIcon }[] = [
+	{ value: '50K+', label: 'Active Users', icon: Users },
+	{ value: '$2B+', label: 'Total Spent', icon: TrendingUp },
+	{ value: '99.9%', label: 'Uptime', icon: Shield },
+	{ value: '4.9/5', label: 'Average Rating', icon: Star },
 ];
 
 export const featuresData: { icon: LucideIcon; title: string; description: string }[] = [
@@ -82,7 +82,7 @@ export const testimonialsData: {
 		role: 'Medium Business Owner',
 		image: 'https://randomuser.me/api/portraits/women/23.jpg',
 		quote:
-			'I used to lose hours digging through receipts. Now I snap a photo and my books are done. Game changer for my business.',
+			'I used to lose hours digging through receipts. Now I snap a photo and my books are done. It’s a game-changer.',
 		rating: 5,
 	},
 	{

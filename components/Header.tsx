@@ -2,13 +2,15 @@ import { SignedOut, SignInButton, SignedIn, UserButton } from '@clerk/nextjs';
 import Link from 'next/dist/client/link';
 import { Button } from './ui/button';
 import { LayoutDashboard, PenBox } from 'lucide-react';
+import { checkForUser } from '@/lib/checkForUser';
 
-export const Header = () => {
+export const Header = async () => {
+	await checkForUser();
 	return (
-		<div className="fixed top-0  py-2 w-full bg-gray-300/10 backdrop-blur-md z-50 border-b">
-			<nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+		<div className="fixed top-0 px-2 py-2 w-full bg-gray-300/10 backdrop-blur-md z-50 border-b">
+			<nav className="container mx-auto py-4 flex items-center justify-between">
 				<Link href="/">
-					<h3 className="text-3xl font-bold">
+					<h3 className="text-2xl sm:text-3xl text-primary font-bold">
 						<span className="text-blue-500">E</span>xpense<span className="text-blue-500">T</span>racker
 					</h3>
 				</Link>

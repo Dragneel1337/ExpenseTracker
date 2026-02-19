@@ -15,6 +15,7 @@ const Stats = () => {
 									<Icon className="w-8 h-8" />
 								</div>
 								<div className="text-3xl font-bold text-gray-800 mt-1">{stat.value}</div>
+								<div className="text-xl text-gray-600 mt-1">{stat.label}</div>
 							</div>
 						);
 					})}
